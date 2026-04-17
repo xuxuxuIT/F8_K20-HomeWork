@@ -1,0 +1,242 @@
+/* Bài 1 */
+/* 1.Tất cả link trong menu điều hướng (kể cả submenu) có màu #1d4ed8 */
+.main-nav a {
+  color: #1d4ed8;
+}
+/* 2.Chỉ các mục menu cấp 1 (không tính submenu) có nền #f1f5f9 */
+.main-nav > ul > li > a {
+  background-color: #f1f5f9;
+}
+/* 3.Đoạn văn đầu tiên ngay sau mỗi tiêu đề h2 trong nội dung bài viết có màu #64748b */
+
+.post-content h2 + p {
+  color: #64748b;
+}
+/* 4.Tất cả đoạn văn nằm sau tiêu đề h2 (không cần liền kề) có màu #0f172a */
+.post-content h2 ~ p {
+  color: #0f172a;
+}
+
+/* 5.Link tác giả trong phần thông tin bài viết có màu #f97316 */
+.author a {
+  color: #f97316;
+}
+
+/* Bài 2 */
+/* 1.Bài viết có nền white */
+.post {
+  background-color: white;
+  /* 3.Khi di chuột vào bài viết, bài viết có nền #f8fafc */
+  &:hover {
+    background-color: #f8fafc;
+  }
+  /* 4.Bài viết nổi bật (có class featured) có nền #fefce8 Khi di chuột vào bài viết, tiêu đề đổi màu #2563eb */
+  &.featured {
+    background-color: #fefce8;
+  }
+  /* 5.Khi di chuột vào bài viết, tiêu đề đổi màu #2563eb */
+
+  &:hover {
+    .post-title {
+      color: #2563eb;
+    }
+  }
+}
+/* 2.Tiêu đề bài viết có màu #0f172a */
+.post-title {
+  color: #0f172a;
+}
+
+/* Bài 3 */
+/* 1.Link trong nội dung bài viết:
+
+Chưa truy cập: màu #2563eb
+
+Đã truy cập: màu #9333ea
+
+Khi di chuột: màu #1e40af
+
+Khi đang nhấn: màu #1e3a8a */
+
+.post-content .resource-list {
+  a {
+    color: #2563eb;
+  }
+  a:visited {
+    color: #9333ea;
+  }
+  a:hover {
+    color: #1e40af;
+  }
+  a:active {
+    color: #1e3a8a;
+  }
+}
+
+/*2. Các nút bấm:
+
+Nút chính có nền #2563eb, chữ white
+
+Khi di chuột vào nút: nền #3b82f6
+
+Khi nhấn nút: nền #1d4ed8
+
+Nút bị vô hiệu hóa: nền #94a3b8, chữ #cbd5e1 */
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  &:hover {
+    background-color: #3b82f6;
+  }
+  &:active {
+    background-color: #1d4ed8;
+  }
+  &:disabled {
+    background-color: #94a3b8;
+    color: #cbd5e1;
+  }
+}
+
+button:disabled {
+  background: #94a3b8;
+  color: #cbd5e1;
+}
+
+/* 3.Ô nhập liệu khi được focus có nền #eff6ff */
+input:focus {
+  background: #eff6ff;
+}
+
+/* bai 4 */
+/* Trong bảng so sánh:
+
+Các hàng lẻ có nền #f8fafc
+
+Các hàng chẵn có nền white
+
+Hàng đầu tiên (tiêu đề bảng) có nền #0f172a, chữ white
+
+Hàng cuối cùng có nền #dbeafe
+
+ */
+.comparison-table {
+  tr:nth-child(odd) {
+    background-color: #f8fafc;
+  }
+  tr:nth-child(even) {
+    background-color: white;
+  }
+  tr:first-child {
+    background-color: #0f172a;
+    color: white;
+  }
+  tr:last-child {
+    background-color: #dbeafe;
+  }
+}
+
+/* Trong danh sách các bước:
+
+Bước đầu tiên có màu #16a34a
+
+Bước cuối cùng có màu #dc2626
+
+Bước thứ 3 có nền #fef3c7 */
+
+.steps {
+  li:first-child {
+    color: #16a34a;
+  }
+  li:last-child {
+    color: #dc2626;
+  }
+  li:nth-child(3) {
+    background-color: #fef3c7;
+  }
+}
+
+/* 3.Các widget trong sidebar (trừ widget cuối) có nền white */
+.sidebar .widget:not(:last-child) {
+  background: white;
+}
+
+/* Bài 5 */
+/* 1.Đoạn văn mở đầu:
+
+Dòng đầu tiên có màu #0f172a
+
+Chữ cái đầu tiên có màu #2563eb */
+.post-content .lead {
+  &::first-line {
+    color: #0f172a;
+  }
+  &::first-letter {
+    color: #2563eb;
+  }
+}
+
+/* 2.Khối trích dẫn thêm dấu ngoặc kép " màu #cbd5e1 ở đầu (dùng ::before với content) */
+.quote::before {
+  content: '"';
+  color: #cbd5e1;
+}
+
+/* 3.Danh sách các bước có ký hiệu đầu dòng màu #2563eb (dùng ::marker) */
+.steps li::marker {
+  color: #2563eb;
+}
+
+/* Khi bôi đen text, nền chuyển sang #bfdbfe, chữ #0f172a (dùng ::selection) */
+::selection {
+  background-color: #bfdbfe;
+  color: #0f172a;
+}
+
+/* 5.Badge thêm chấm tròn màu #ef4444 ở đầu (dùng ::before với content: "") */
+.badge::before {
+  content: "";
+  background: #ef4444;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  margin-bottom: 3px;
+}
+
+/* Bai6 */
+/* Ô nhập bắt buộc (required) có nền #fffbeb
+
+Link bắt đầu bằng "https://" có màu #2563eb
+
+Link tải file PDF có màu #ea580c
+
+Nút có class chứa từ "btn" có nền #e2e8f0
+
+Phần tử có thuộc tính lang bắt đầu bằng "vi" có màu #0f172a
+
+Hàng trong bảng có độ ưu tiên cao (data-priority="high") có nền #fee2e2 */
+input[required] {
+  background-color: #fffbeb;
+}
+
+a[href^="https://"] {
+  color: #2563eb;
+}
+
+a[href$=".pdf"] {
+  color: #ea580c;
+}
+
+[class*="btn"] {
+  background-color: #e2e8f0;
+}
+
+[lang^="vi"] {
+  color: #0f172a;
+}
+
+tr[data-priority="high"] {
+  background-color: #fee2e2;
+}
