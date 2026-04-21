@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trung tâm cấu hình giao diện</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #f3f4f6;
+      }
+
+      .panel {
+        width: 720px;
+        margin: 30px auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: white;
+      }
+
+      .header {
+        background: orange;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+      }
+
+      .section {
+        padding: 15px;
+      }
+
+      .group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      .result p {
+        opacity: 0.3;
+        padding: 8px;
+        margin: 5px 0;
+        transition: 0.3s;
+      }
+
+      #light:checked + label {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      #dark:checked + label {
+        background: #add8e6;
+        color: white;
+      }
+
+      #light:checked ~ .result .light {
+        opacity: 1;
+        background: #fef3c7;
+        color: black;
+      }
+      #dark:checked ~ .result .dark {
+        opacity: 1;
+        background: #4d81d4;
+        color: white;
+      }
+
+      #red:checked + label {
+        background: #fecaca;
+        color: red;
+      }
+      #blue:checked + label {
+        background: #bfdbfe;
+        color: blue;
+      }
+      #green:checked + label {
+        background: #bbf7d0;
+        color: green;
+      }
+
+      #red:checked ~ .result .red {
+        opacity: 1;
+        background: #fecaca;
+        color: red;
+      }
+      #blue:checked ~ .result .blue {
+        opacity: 1;
+        background: #bfdbfe;
+        color: blue;
+      }
+      #green:checked ~ .result .green {
+        opacity: 1;
+        background: #bbf7d0;
+        color: green;
+      }
+
+      #vi:checked + label {
+        background: #bbf7d0;
+        color: green;
+      }
+      #en:checked + label {
+        background: #bfdbfe;
+        color: blue;
+      }
+
+      #vi:checked ~ .result .vi {
+        opacity: 1;
+        color: green;
+        font-size: 18px;
+      }
+      #en:checked ~ .result .en {
+        opacity: 1;
+        color: blue;
+        font-size: 18px;
+      }
+
+      #adv:checked + label {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      #eco:checked + label {
+        background: #bbf7d0;
+        color: green;
+      }
+      #warn:checked + label {
+        background: #fecaca;
+        color: red;
+      }
+
+      #adv:checked ~ .result .adv {
+        opacity: 1;
+        background: #fef3c7;
+        color: #92400e;
+      }
+      #eco:checked ~ .result .eco {
+        opacity: 1;
+        background: #bbf7d0;
+        color: green;
+      }
+      #warn:checked ~ .result .warn {
+        opacity: 1;
+        background: #fecaca;
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="panel">
+      <div class="header">Trung tâm cấu hình giao diện</div>
+
+      <div class="section">
+        <!-- THEME -->
+        <div class="group">
+          <p><b>Chọn giao diện (Theme):</b></p>
+
+          <input type="radio" name="theme" id="light" checked />
+          <label for="light">Light</label>
+
+          <input type="radio" name="theme" id="dark" />
+          <label for="dark">Dark</label>
+        </div>
+
+        <div class="group">
+          <p><b>Chọn màu chủ đạo (Color):</b></p>
+
+          <input type="radio" name="color" id="red" checked />
+          <label for="red">Red</label>
+
+          <input type="radio" name="color" id="blue" />
+          <label for="blue">Blue</label>
+
+          <input type="radio" name="color" id="green" />
+          <label for="green">Green</label>
+        </div>
+
+        <div class="group">
+          <p><b>Chọn ngôn ngữ (Language):</b></p>
+
+          <input type="radio" name="lang" id="vi" checked />
+          <label for="vi">VI</label>
+
+          <input type="radio" name="lang" id="en" />
+          <label for="en">EN</label>
+        </div>
+
+        <div class="group">
+          <p><b>Tùy chọn bổ sung:</b></p>
+
+          <input type="checkbox" id="adv" />
+          <label for="adv">Hiển thị mô tả nâng cao</label>
+
+          <input type="checkbox" id="eco" />
+          <label for="eco">Bật chế độ Eco</label>
+
+          <input type="checkbox" id="warn" />
+          <label for="warn">Hiển thị cảnh báo quan trọng</label>
+        </div>
+
+        <div class="result">
+          <p class="light">Theme Light: Giao diện sáng, chữ đen.</p>
+          <p class="dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+
+          <p class="red">Màu Red: được nhấn mạnh khi chọn Red.</p>
+          <p class="blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
+          <p class="green">Màu Green: được nhấn mạnh khi chọn Green.</p>
+
+          <p class="vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</p>
+          <p class="en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</p>
+
+          <p class="adv">Mô tả nâng cao: giải thích kỹ hơn về giao diện.</p>
+          <p class="eco">Chế độ Eco: tiết kiệm tài nguyên.</p>
+          <p class="warn">Cảnh báo quan trọng: thông tin hệ thống.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
