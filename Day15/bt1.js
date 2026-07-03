@@ -32,9 +32,3 @@ function classifyTriangle(a, b, c) {
     return "Tam giác thường";
   }
 }
-
-console.log(classifyTriangle(3, 4, 5));
-
-console.log(classifyTriangle(2, 2, 2));
-
-console.log(classifyTriangle(1, 2, 10));
