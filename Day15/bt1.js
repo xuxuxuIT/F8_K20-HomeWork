@@ -32,3 +32,36 @@ function classifyTriangle(a, b, c) {
     return "Tam giác thường";
   }
 }
+
+function findMax(...s) {
+  let max = s[0];
+
+  for (let i = 1; i < s.length; i++) {
+    if (s[i] > max) {
+      max = s[i];
+    }
+  }
+
+  return max;
+}
+
+// bai 4
+const product = {
+  id: 1,
+  name: "Laptop",
+};
+
+console.log("Sản phẩm: " + product);
+
+console.log("Sản phẩm:", product);
+
+// ex6
+const dog = {
+  name: "Milo",
+
+  bark() {
+    console.log(`Woof! I'm ${this.name}`);
+  },
+};
+
+dog.bark();
