@@ -179,3 +179,23 @@ function getFullReport(orders) {
 }
 
 console.log(getFullReport(orders));
+const date = new Date("2026-07-19T15:30:45+07:00");
+const hours = date.getHours();
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+const day = date.getDay();
+const dateOfMonth = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+const weekDays = [
+  "Chủ Nhật",
+  "Thứ Hai",
+  "Thứ Ba",
+  "Thứ Tư",
+  "Thứ Năm",
+  "Thứ Sáu",
+  "Thứ Bảy",
+];
+console.log(
+  `Bây giờ là ${hours} giờ ${minutes} phút ${seconds} giây, ${weekDays[day]} ngày ${dateOfMonth} tháng ${month} năm ${year}`,
+);
